@@ -51,3 +51,30 @@ plotmap(lon=lon , lat=lat , main="North coast of the state of São Paulo")
 plotmap(xlim=lon , ylim=lat , main="North coast of the state of São Paulo")
 
 # Subplots and some additional arguments of plotmap
+par(mfrow = c(2, 1))
+plotmap('medw4', main = 'Wastern Mediterranean Sea', col.bg = 'darkblue') #color background didn't work
+plotmap('medw4', main = 'Wastern Mediterranean Sea', bwd = 3, col.bg = 'darkblue', border = 'grey', grid = FALSE)
+
+
+## THE SET.COLORBAR- FUNCTION
+# To set the colorbar, four different arguments are needed:
+# 1. the limitis of the colorbar, defining its position, height and width
+# 2. the axis where to set tick labels (bottom, left, top or right)
+# 3. the colormap and its gradient (horizontal or vertical)
+# 4. the labels of the colorbar 
+
+# 3 ways to define the colorbar position
+# 1. defining its spatial extent (arguments cbx, cby)
+# 2. defining argument cbpos with a single letter ('b', 'l', 't', 'r') that indicates the position of the colorbar (bottom, left, top or right)
+# 3. set the position of colorbar manually with the mouse cursor (run set.colorbar() without defining cbx, cby or cbpos).
+
+# EXAMPLE 1: SET COLORBAR MANUALLY
+par(mar = c(3, 1, 3, 1))
+plot(0.5, 0.5, xlim = c(0, 1), ylim = c(0, 1))
+set.colorbar(cbx=c(0, 1), cby=c(-.3, -.4)) # bottom 
+set.colorbar(cby=c(0, 1), cbx=c(-.4, -.3)) # left 
+set.colorbar(cbx=c(0, 1), cby=c(1.2, 1.3)) # top 
+set.colorbar(cby=c(0, 1), cbx=c(1.2, 1.3)) # right
+
+
+
